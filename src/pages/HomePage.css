@@ -1,0 +1,247 @@
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+
+.home-header {
+  text-align: center;
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.trip-card {
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  overflow: hidden;
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.trip-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.create-card {
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.create-card:hover {
+  border-color: var(--accent-primary);
+  background: rgba(255, 51, 102, 0.05);
+}
+
+.create-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), #ff6699);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 15px rgba(255, 51, 102, 0.4);
+}
+
+.create-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+}
+
+.create-card p {
+  color: var(--text-muted);
+}
+
+.existing-card {
+  position: relative;
+}
+
+.card-banner {
+  height: 120px;
+  background: linear-gradient(135deg, #2a0845, #6441A5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.banner-icon {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.banner-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.trip-card:hover .banner-actions {
+  opacity: 1;
+}
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.image-btn:hover {
+  background: var(--accent-secondary);
+  transform: scale(1.1);
+}
+
+.trash-btn:hover {
+  background: var(--accent-primary);
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.card-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.detail-icon {
+  color: var(--accent-secondary);
+}
+
+.view-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.view-btn:hover {
+  background: rgba(0, 210, 255, 0.2);
+  border-color: var(--accent-secondary);
+  color: white;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 450px;
+  padding: 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-top: 4px solid var(--accent-primary);
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.modal-warning {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.cancel-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background var(--transition-fast);
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.delete-confirm-btn {
+  background: linear-gradient(135deg, #ff3366, #ff004c);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 51, 102, 0.4);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.delete-confirm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 51, 102, 0.6);
+}
