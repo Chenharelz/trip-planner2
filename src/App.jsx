@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/trip-planner2/">
+    <Router>
       <div className="app-container">
         <main className="main-content">
           <Routes>
